@@ -317,14 +317,70 @@ def removeDuplicates(str):
 #################################################################################
 # # Write a program to print characters at odd position and even position for the given String
 
+def evenOddPosUsingListComprehension(str):
+    list2 = [x for ind, x in enumerate(str) if ind%2==0]
+    list3 = [x for ind, x in enumerate(str) if ind%2!=0]
+    print(list2)
+    print(list3)
+
+def evenOddPosUsingListSlicing(str):
+    print("Even Characters:", str[::2]) # Characters at even index 
+    print("Odd Characters:", str[1::2]) # Characters at odd index 
+
+     
+#evenOddPosUsingListComprehension("test at even odd position")
+#evenOddPosUsingListSlicing("test second method")
+
 #################################################################################
 # Program to merge characters of 2 strings into a single string by taking characters alternatively.
 
 #################################################################################
-# Write a program to sort the characters of the string and first alphabet symbols followed by numeric values
+#### Write a program to sort the characters of the string and first alphabet symbols followed by numeric values
+
+def sortCharsAndNumbers(input):
+    print("The original string is : " + input)
+    
+    # separating numbers and alphabets
+    num_list = [x for x in input if x.isnumeric()]
+    alpha_list = [x for x in input if not x.isnumeric()]
+    
+    # sorting the lists
+    num_list.sort()
+    alpha_list.sort()
+    
+    # concatenating the lists
+    res = alpha_list + num_list
+    
+    # printing result 
+    print("The Custom sorted result : " + ''.join(res))
+
+#sortCharsAndNumbers("weray451u")
 
 #################################################################################
 # Write a program for the following requirement. Input: a4b3c2 and output: aaaabbbcc
 
+def charMultiplicationForDigits(input):
+     output = ''
+     for char in input:
+          if char.isalpha():
+               output = output + char
+               prev = char
+          else:
+               output = output + prev*(int(char)-1)  
+     print(output)
+#charMultiplicationForDigits("a4b3c2")
+
+
 #################################################################################
-# Write a program to perform the following activity. input: a4k3b2 and output: aeknbd
+#### Write a program to perform the following activity. input: a4k3b2 and output: aeknbd
+
+def charAdvancement(input):
+     output = ''
+     for char in input:
+          if char.isalpha():
+               output = output + char
+               prev = char
+          else:
+               output = output + chr(ord(prev) + int(char)) 
+     print(output)
+charAdvancement("a4k3b2")
