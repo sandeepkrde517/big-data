@@ -6,7 +6,7 @@ def printDemo():
     b=20
     c=30
 #f= open('abc.txt', 'w')
-    print(a,b,c, sep='..', end='#', file=open('abc.txt', 'w'))
+ #   print(a,b,c, sep='..', end='#', file=open('abc.txt', 'w'))
 
 #############################################################
 
@@ -18,3 +18,8 @@ def inputDemo():
 
 #printDemo()
 #
+
+#####################
+
+list = [1]*5 + [2]*3 +[3]*2
+print(list)

@@ -13,16 +13,25 @@
 # Find The First Repeated Character In A String
 # Find The First Non-Repeated Character In A String
 # How to remove all vowels from a string
-# print common characters between two strings in alphabetical order.
 # Most repetitive character in a string
 # Write a program to remove duplicate characters from the given input string
 # # Write a program to print characters at odd position and even position for the given String
-# Program to merge characters of 2 strings into a single string by taking characters alternatively.
 # Write a program to sort the characters of the string and first alphabet symbols followed by numeric values
+# print common characters between two strings in alphabetical order.
+# Program to merge characters of 2 strings into a single string by taking characters alternatively.
+
+
 # All permutations of a string
 # print all sub strings of a string
 # Write a program for the following requirement. Input: a4b3c2 and output: aaaabbbcc
 # Write a program to perform the following activity. input: a4k3b2 and output: aeknbd
+
+"""
+
+Multiline Comments
+Demo
+
+"""
 
 #################################################################
 ####1. reverse a string
@@ -383,4 +392,22 @@ def charAdvancement(input):
           else:
                output = output + chr(ord(prev) + int(char)) 
      print(output)
-charAdvancement("a4k3b2")
+#charAdvancement("a4k3b2")
+
+#################################################################################
+# All permutations of a string
+
+
+#################################################################################
+
+
+
+#################################################################################
+
+
+
+#################################################################################
+
+
+
+#################################################################################
