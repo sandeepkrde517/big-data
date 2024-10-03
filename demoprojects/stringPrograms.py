@@ -8,7 +8,6 @@
 # check whether two given strings are anagram or not
 # count occurrences of each character in a string
 # check whether one string is a rotation of another
-# find longest substring without repeating characters in a string
 # program to swap two string variables without using third or temp variable
 # Find The First Repeated Character In A String
 # Find The First Non-Repeated Character In A String
@@ -17,14 +16,14 @@
 # Write a program to remove duplicate characters from the given input string
 # # Write a program to print characters at odd position and even position for the given String
 # Write a program to sort the characters of the string and first alphabet symbols followed by numeric values
-# print common characters between two strings in alphabetical order.
-# Program to merge characters of 2 strings into a single string by taking characters alternatively.
-
-
-# All permutations of a string
-# print all sub strings of a string
 # Write a program for the following requirement. Input: a4b3c2 and output: aaaabbbcc
 # Write a program to perform the following activity. input: a4k3b2 and output: aeknbd
+
+# find longest substring without repeating characters in a string
+# print common characters between two strings in alphabetical order.
+# All permutations of a string
+# print all sub strings of a string
+# Program to merge characters of 2 strings into a single string by taking characters alternatively.
 
 """
 
