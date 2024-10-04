@@ -17,7 +17,6 @@
 # Reverse an array.
 # Array Rotation Program
 # Contiguous sub arrays with given sum
-# Contiguous sub array with maximum sum
 
 # How to find intersection of two arrays
 # How to find union and intersection of multiple arrays
@@ -27,6 +26,7 @@
 # How to merge two sorted or unsorted arrays into single sorted array without duplicates
 # How to sort array elements by frequency
 # How to find all the leaders in an integer array
+# Contiguous sub array with maximum sum
 
 ################################################################
 # How to find the most frequent element in an array
@@ -303,20 +303,109 @@ def missing_number(n, arr):
 # print(missing_number(6,[1, 2, 3,4,6]))
 
 ################################################################
+# How do you count occurrences of each element in an array
+
+def countOccurences():
+    l = ["a","b","b"]
+    new_list = [[x,l.count(x)] for x in set(l)]
+    print(new_list)
+
+# Or use below
+    new_dict = dict((x,l.count(x)) for x in set(l))
+    print(new_dict)
+
+# countOccurences()
+
+################################################################
+# Reverse an array.
+
+def list_reverse(arr):
+    size = len(arr)
+    i = 0
+    print("array before reversing: ",arr)
+    while i < size // 2:
+        # swap elements from the start with elements from the end iteratively
+        arr[i], arr[size - i - 1] = arr[size - i - 1], arr[i]
+        i += 1
+    print("array after reversing: ",arr)
+    return arr
+
+# list_reverse([1, 2, 3, 4, 5])
+
+# This contributed by Sushrut Thakur
 
 
 ################################################################
+# Array Rotation Program
+# slicing approach to rotate the array
+def rotateList(arr,d):
+    n = len(arr)
+    arr[:]=arr[d:n]+arr[0:d]
+    return arr
 
+# print(rotateList([1, 2, 3, 4, 5, 6],2)) 
+
+## 2nd approach
+#Function to left rotate arr[] of size n by d*/
+def leftRotate(arr, d, n):
+	for i in range(d):
+		leftRotatebyOne(arr, n)
+
+#Function to left Rotate arr[] of size n by 1*/ 
+def leftRotatebyOne(arr, n):
+	temp = arr[0]
+	for i in range(n-1):
+		arr[i] = arr[i+1]
+	arr[n-1] = temp
+		
+
+# leftRotate([1, 2, 3, 4, 5, 6, 7], 2, 7)
+# print(arr)
 
 ################################################################
+# Contiguous sub arrays with given sum
+ 
+def subArraySum(arr, n, sum_): 
 
+	curr_sum = arr[0] 
+	start = 0
+	i = 1
+	while i <= n: 
+		while curr_sum > sum_ and start < i-1: 
+		
+			curr_sum = curr_sum - arr[start] 
+			start += 1
+		if curr_sum == sum_: 
+			print ("Sum found between indexes") 
+			print ("% d and % d"%(start, i-1)) 
+			return 1
 
+		if i < n: 
+			curr_sum = curr_sum + arr[i] 
+		i += 1
+
+	# If we reach here, then no subarray 
+	print ("No subarray found") 
+	return 0
+
+# subArraySum([15, 2, 4, 8, 9, 5, 10, 23], len([15, 2, 4, 8, 9, 5, 10, 23]), 23) 
 
 ################################################################
+# How to find the most frequent element in an array
 
+def most_frequent(List):
+    counter = 0
+    num = List[0]
+    
+    for i in List:
+        curr_frequency = List.count(i)
+        if(curr_frequency> counter):
+            counter = curr_frequency
+            num = i
 
-################################################################
+    return num
 
+print(most_frequent([2, 1, 2, 2, 1, 3]))
 
 ################################################################
 
