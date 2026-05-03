@@ -117,7 +117,7 @@ def reverse_order_words(str):
       for word in words:
            string.insert(0, word)
       return " ".join(string)
-#print(reverse_order_words("i like this program very much"))
+# print(reverse_order_words("i like this program very much"))
 
 #################################################################################
 ####5. remove all white spaces from a string
@@ -221,6 +221,26 @@ def areRotations(string1, string2):
 #################################################################################
 ####10. find longest substring without repeating characters in a string
 
+def longest_substring(str1):
+    freq = {}
+    substr = ''
+
+    for ch in str1:
+        if ch not in substr:
+            substr = substr + ch
+        else:
+            if substr:
+                 freq[substr] = len(substr)
+            substr = ''
+        
+    if substr:
+         freq[substr] = len(substr)
+    
+    result = max(freq, key=freq.get)
+    print(result)
+
+# longest_substring('testdemoppwerrasdpqngh')
+
 #################################################################################
 ####11. program to swap two string variables without using third or temp variable
 
@@ -229,8 +249,8 @@ def swapTwoStrings(str1, str2):
    
     #Concatenate both the string str1 and str2 and store it in str1  
     str1 = str1 + str2;  
-    str2 = str1[0 : (len(str1) - len(str2))];  
-    str1 = str1[len(str2):];  
+    str2 = str1[0 : (len(str1) - len(str2))]
+    str1 = str1[len(str2):]  
     print("Strings after swapping: " + str1 + " " + str2)
 
 #swapTwoStrings("test1", "test2")
@@ -255,16 +275,16 @@ def firstUniqChar(s):
 
 def firstRepChar(s):
     # Create an array to store the count of characters
-    charCount = [0] * 26
+    freq = [0] * 26
 
     for ch in s:
         index = ord(ch) - ord('a')
-        if charCount[index] != 0:
+        if freq[index] != 0:
             return ch
-        charCount[index] += 1
+        freq[index] += 1
 
     return "-1"
-#print(firstRepChar("ussdwerw"))
+# print(firstRepChar("uussdwerw"))
 
 
 #################################################################################
@@ -309,7 +329,7 @@ def mostRepeatitiveChar(test_str):
     max_char = max(freq, key=freq.get)
     return max_char
 
-#print(mostRepeatitiveChar("qweerttttup"))
+# print(mostRepeatitiveChar("qweerttttup"))
 
 #################################################################################
 # Write a program to remove duplicate characters from the given input string
@@ -349,7 +369,7 @@ def sortCharsAndNumbers(input):
     print("The original string is : " + input)
     
     # separating numbers and alphabets
-    num_list = [x for x in input if x.isnumeric()]
+    num_list = [x for x in input if x.isnumeric()]  # isalnum(), isalpha() for others to checck
     alpha_list = [x for x in input if not x.isnumeric()]
     
     # sorting the lists
@@ -398,13 +418,21 @@ def charAdvancement(input):
 
 
 #################################################################################
+# python program to write a pyramid pattern of stars
 
+def pyramid_pattern(n):
+    for i in range(1, n + 1):  # Loop through each row from 1 to n
+        print(" " * (n - i) + "* " * i)
 
-
+# pyramid_pattern(5)
 #################################################################################
+# python program to write a inverted pyramid pattern of stars
 
+def inverted_pyramid_pattern(n):
+    for i in range(n, 0, -1):  # Looping from n down to 1
+        print(" " * (n - i) + "* " * i)
 
-
+# inverted_pyramid_pattern(5)
 #################################################################################
 
 

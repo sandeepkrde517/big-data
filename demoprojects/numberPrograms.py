@@ -13,6 +13,7 @@
 # How to print twin prime numbers between two given numbers?
 # How to find a prime number which comes after three non-prime numbers?
 # check a palindrome number
+# factorial of given number
 # Check number belongs to Fibonacci series or not
 # How to find sum of all digits of a number
 # check whether user input is number or not
@@ -112,10 +113,31 @@ palindromeFlag = (str(n) == str(n)[::-1])
 print(palindromeFlag) """
 
 ################################################################
+# factorial of given number
+
+def factorial(n):
+    
+    # single line to find factorial
+    return 1 if (n==1 or n==0) else n * factorial(n - 1) 
+
+# Driver Code
+# print("Factorial value is: ",factorial(5))
 
 
 ################################################################
+# create a fibonacci series
 
+def generate_fibonacci(limit):
+    a, b = 0, 1
+    series = [a, b]
+    while b <= limit:
+        a, b = b, a + b
+        if b > limit:
+            break
+        series.append(b)
+    print(series)
+
+generate_fibonacci(10)
 
 
 ################################################################

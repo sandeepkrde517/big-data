@@ -28,6 +28,13 @@
 # How to find all the leaders in an integer array
 # Contiguous sub array with maximum sum
 
+# find the occurences of each word in a list in python
+
+# Write a python program to implement following. Given a pattern and a string. If string matches the pattern return true else return false. 
+# Ex: 
+# Pattern – “abba”, String – “dog cat cat dog” will return true. 
+# Pattern – “aba”, String – “dog dog cat” will return false.
+
 ################################################################
 # How to find the most frequent element in an array
 
@@ -42,9 +49,22 @@ def most_frequent(List):
             counter = curr_frequency
             num = i
 
-    return num
+    return num                      
 
 #print(most_frequent([2, 1, 2, 2, 1, 3]))
+
+########
+## or use below code snippet
+def test(List):
+      dict = {}
+      for i in List:
+            if i in dict:
+                  dict[i] += 1
+            else:
+                  dict[i] = 1
+
+      return max(dict, key=dict.get)
+# print(test([2, 1, 2, 2, 1, 3]))
 
 ########
 # using Counter 
@@ -61,9 +81,9 @@ def most_frequent(List):
 
 def findDuplicates():
     input_list = [1, 2, 1, 2, 3, 4, 5, 1, 1, 2, 5, 6, 7, 8, 9, 9]
-    print(list(set([x for i,x in enumerate(input_list) if input_list.count(x) > 1])))
+    print(list(set([x for x in input_list if input_list.count(x) > 1])))
 
-#findDuplicates()
+findDuplicates()
 
 ################################################################
 # How to remove duplicate elements from Array
@@ -225,7 +245,6 @@ def pushZerosToEnd(arr):
     print("Before: ", arr)
     for i in range(n):
         if arr[i] != 0:
-            
             # here count is incremented
             arr[count] = arr[i]
             count+=1
@@ -331,9 +350,7 @@ def list_reverse(arr):
     return arr
 
 # list_reverse([1, 2, 3, 4, 5])
-
-# This contributed by Sushrut Thakur
-
+# Or simply use arr[::-1]
 
 ################################################################
 # Array Rotation Program
@@ -391,23 +408,29 @@ def subArraySum(arr, n, sum_):
 # subArraySum([15, 2, 4, 8, 9, 5, 10, 23], len([15, 2, 4, 8, 9, 5, 10, 23]), 23) 
 
 ################################################################
-# How to find the most frequent element in an array
+# Important
+# Write a python program to implement following. Given a pattern and a string. If string matches the pattern return true else return false. 
+# Ex: 
+# Pattern – “abba”, String – “dog cat cat dog” will return true. 
+# Pattern – “aba”, String – “dog dog cat” will return false.
 
-def most_frequent(List):
-    counter = 0
-    num = List[0]
-    
-    for i in List:
-        curr_frequency = List.count(i)
-        if(curr_frequency> counter):
-            counter = curr_frequency
-            num = i
+def word_pattern(pattern, string):
+    words = string.split()
+    return [pattern.index(c) for c in pattern] == [words.index(w) for w in words]
 
-    return num
-
-print(most_frequent([2, 1, 2, 2, 1, 3]))
+# print(word_pattern('abba','test demo demo test'))
 
 ################################################################
+# list comprehension that transposes rows and columns.
 
+def transposeMatrix():
+    matrix = [[1, 2, 3],
+          [4, 5, 6],
+          [7, 8, 9]]
+    L = [[row[i] for row in matrix] for i in range(3)]
+    print(L)
+
+
+transposeMatrix()
 
 ################################################################
